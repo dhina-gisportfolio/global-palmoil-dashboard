@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSPO Certification Dashboard</title>
+
+  <!-- MapLibre CSS -->
+  <link href="https://unpkg.com/maplibre-gl@5.8.0/dist/maplibre-gl.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Map Header -->
+  <header style="display: flex; align-items: center; gap: 14px; background-color: #124734; padding: 12px 20px; color: white;">
+  
+  <!-- Path points directly to the file inside your image folder -->
+  <img src="images/palm-oil.png" alt="RSPO Logo" style="height: 48px; width: auto; object-fit: contain;">
+
+  <div>
+    <h1 style="margin: 0; font-family: 'Heebo', sans-serif; font-size: 1.25rem; font-weight: 700; color: #FFFFFF;">
+      GLOBAL PALM OIL DASHBOARD
+    </h1>
+    <p style="margin: 4px 0 0 0; font-family: 'Heebo', sans-serif; font-size: 0.85rem; color: #E0E0E0;">
+      Ramadhina Nurdianti | GIS & Remote Sensing Analyst • Web GIS Developer • Cartographer & Spatial Data Storyteller | <a href="mailto:ramadhinan9@gmail.com" style="color: #FFFFFF; text-decoration: underline;">ramadhinan9@gmail.com</a> | 📍 Quito, Ecuador or Yogyakarta, Indonesia
+    </p>
+  </div>
+
+</header>
+
+  <!-- Basemap Gallery -->
+  <div id="basemap-panel">
+    <div class="basemap-item" onclick="changeBasemap('dataviz')">
+      <img src="images/dataviz.png" alt="Dataviz">
+      <span>Dataviz</span>
+    </div>
+
+    <div class="basemap-item" onclick="changeBasemap('satellite')">
+      <img src="images/satellite.png" alt="Satellite">
+      <span>Satellite</span>
+    </div>
+
+    <div class="basemap-item" onclick="changeBasemap('lightbase')">
+      <img src="images/lightbase.png" alt="Light Base">
+      <span>Light Base</span>
+    </div>
+
+    <div class="basemap-item" onclick="changeBasemap('topo')">
+      <img src="images/topo.png" alt="Topographic">
+      <span>Topographic</span>
+    </div>
+  </div>
+
+  <!-- Map Canvas -->
+  <div id="map"></div>
+
+  <!-- Heatmap Selector -->
+  <div id="heatmap-panel">
+    <label for="heatmapSelect">RSPO Mill Certification of Palm Oil Producer Country</label>
+    <select id="heatmapSelect" onchange="changeHeatmap(this.value)">
+      <option value="AllCert">All Certification</option>
+      <option value="IP">Identity Preserved (IP)</option>
+      <option value="IP_MB">IP/MB</option>
+      <option value="MB">Mass Balance (MB)</option>
+    </select>
+  </div>
+
+  <!-- Dynamic Multi-Layer Legend -->
+  <div id="legend">
+    <div id="legend-content"></div>
+  </div>
+
+  <!-- Content List Panel -->
+  <div id="layer-control">
+    <h4>Layer List</h4>
+
+    <label class="layer-item">
+      <span>Palm Oil Producer Country</span>
+      <input type="checkbox" id="layer-certified">
+      <span class="slider"></span>
+    </label>
+
+    <label class="layer-item">
+      <span>RSPO Certified Concession</span>
+      <input type="checkbox" id="layer-concession" checked>
+      <span class="slider"></span>
+    </label>
+
+    <label class="layer-item">
+      <span>Palm Oil Mill</span>
+      <input type="checkbox" id="layer-pomill" checked>
+      <span class="slider"></span>
+    </label>
+
+    <label class="layer-item">
+      <span>Mill Sourcing Area</span>
+      <input type="checkbox" id="layer-catchment" checked>
+      <span class="slider"></span>
+    </label>
+
+    <label class="layer-item">
+      <span>Oil Palm Land Cover</span>
+      <input type="checkbox" id="layer-biopama" checked>
+      <span class="slider"></span>
+    </label>    
+    
+    <label class="layer-item">
+      <span>Country Boundary</span>
+      <input type="checkbox" id="layer-boundary" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <!-- Map Footer -->
+  <footer id="footer">
+    <div id="footer-left">
+      Data Sources: 
+      <a href="https://knowledge.rainforest-alliance.org/docs/the-universal-mill-list" target="_blank" rel="noopener noreferrer" style="color: #FFFFFF; text-decoration: none;"> The Universal Mill List (Rainforest Alliance) • </a> 
+      <a href="https://rspo.org/as-an-organisation/tools/georspo/" target="_blank" rel="noopener noreferrer" style="color: #FFFFFF; text-decoration: none;"> RSPO Concessions data (GeoRSPO) •</a> 
+      <a href="https://developers.google.com/earth-engine/datasets/catalog/BIOPAMA_GlobalOilPalm_v1?hl=es-419" target="_blank" rel="noopener noreferrer" style="color: #FFFFFF; text-decoration: none;"> Oil Palm Plantation Land Cover (Descals et al., 2021)</a>
+    </div>
+
+    <div id="footer-right">
+      © 2026 Global Palm Oil Dashboard
+      <a href="https://maplibre.org/" target="_blank" rel="noopener noreferrer" style="color: #FFFFFF; text-decoration: none;">| Map Libre | </a> 
+      <a href="https://www.maptiler.com/copyright/" target="_blank" rel="noopener noreferrer" style="color: #FFFFFF; text-decoration: none;">© MapTiler</a> 
+      <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" style="color: #FFFFFF; text-decoration: none;">© OpenStreetMap contributors</a>
+    </div>
+  </footer>
+
+  <!-- MapLibre JavaScript & App Logic -->
+  <script src="https://unpkg.com/maplibre-gl@5.8.0/dist/maplibre-gl.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
