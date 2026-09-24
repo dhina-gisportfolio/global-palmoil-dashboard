@@ -827,10 +827,10 @@ function showWelcomePopup() {
         </ul>
 
         <div style="background-color: #FDF2F2; border-left: 4px solid #E74C3C; padding: 10px 12px; margin-top: 12px; border-radius: 4px;">
-          <p style="margin: 0 0 6px 0; font-weight: 700; color: #C0392B;">
+          <p style="margin: 0 0 6px 0; font-size: 0.8rem; font-weight: 700; color: #C0392B;">
             🚨 Important Notes on the Data:
           </p>
-          <ol style="margin: 0 0 0 16px; padding: 0; font-size: 0.9rem; line-height: 1.45; color: #2C3E50;">
+          <ol style="margin: 0 0 0 16px; padding: 0; font-size: 0.6rem; line-height: 1.45; color: #2C3E50;">
             <li style="margin-bottom: 6px;">
               <b>Producer Country Layer:</b> A value of <b>0</b> means the country actively produces palm oil, but hasn't certified any mills under RSPO standards yet.
             </li>
