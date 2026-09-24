@@ -12,11 +12,10 @@ html, body {
   position: fixed;            /* Locks the page in place */
 }
 
-/* Map Canvas */
 #map {
   width: 100%;
   position: absolute;
-  top: 80px;    /* Matches the header height */
+  top: 80px;    /* Matches the new header height */
   bottom: 40px; /* Keeps the map flush with the footer */
   left: 0;
   z-index: 1;
@@ -24,80 +23,84 @@ html, body {
 
 /* Move all top-right MapLibre controls below the header */
 .maplibregl-ctrl-top-right {
-  top: 10px !important;
-  right: 10px !important;
+  top: 5px !important;
+  right: 1px !important;
 }
 
 /* Move ONLY the Attribution Control */
 .maplibregl-ctrl-attrib {
   position: absolute !important;
-  bottom: 45px !important;
+  bottom: 20px !important;
   right: 10px !important;
   margin: 0 !important;
   white-space: nowrap;
-  max-width: 80vw !important;
+  max-width: 20 !important;
 }
 
 /* Move ONLY the Scale Control */
 .maplibregl-ctrl-scale {
   position: absolute !important;
-  bottom: 75px !important; /* Positioned above the attribution control */
+  bottom: 70px !important; /* Positioned above the attribution control */
   right: 10px !important;
   margin: 0 !important;
 }
 
 /* Basemap Gallery */
-#basemap-panel {
-  position: absolute;
-  bottom: 50px;
-  right: 10px;
-  z-index: 999;
-  background: white;
-  padding: 5px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-  max-width: calc(100vw - 20px);
-  overflow-x: auto;
+
+#basemap-panel{
+  position:absolute;
+  bottom:50px;
+  right:10px;
+  z-index:999;
+
+  background:white;
+  padding:5px;
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.25);
+
+  display:flex;
+  flex-direction:row;
+  gap:5px;
 }
 
-.basemap-item {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  cursor: pointer;
-  border-radius: 8px;
-  padding: 0px;
-  transition: 0.2s;
+.basemap-item{
+  display:flex;
+  align-items:center;
+  gap:5px;
+
+  cursor:pointer;
+  border-radius:8px;
+  padding:0px;
+
+  transition:0.2s;
 }
 
-.basemap-item:hover {
-  background: #E3F2FD;
+.basemap-item:hover{
+  background:#E3F2FD;
 }
 
-.basemap-item img {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 6px;
-  border: 1px solid #ddd;
+.basemap-item img{
+  width:40px;
+  height:40px;
+  object-fit:cover;
+  border-radius:6px;
+  border:1px solid #ddd;
 }
 
-.basemap-item span {
-  font-family: "Heebo", sans-serif;
+.basemap-item span{
+  font-family:"Heebo", sans-serif;
   font-size: 11px;
   font-weight: 500;
 }
 
 /* Map Header */
+
 #header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 80px; /* Increased from 65px */
   background: #124734;
   color: white;
   display: flex;
@@ -108,163 +111,113 @@ html, body {
   z-index: 2000;
 }
 
-#header-left h1 {
-  margin: 0;
-  font-size: clamp(16px, 2vw, 20px);
-  font-family: "Heebo", sans-serif;
+#header-left h1{
+  margin:0;
+  font-size:20px;
+  font-family:"Heebo", sans-serif;
 }
 
-#header-left p {
-  margin: 2px 0 0 0;
-  font-size: clamp(10px, 1.2vw, 12px);
-  opacity: 0.85;
-  font-family: "Heebo", sans-serif;
+#header-left p{
+  margin:2px 0 0 0;
+  font-size:12px;
+  opacity:0.85;
+  font-family:"Heebo", sans-serif;
 }
 
-#header-right img {
-  height: 40px;
-  max-width: 100%;
-  object-fit: contain;
+#header-right img{
+  height:40px;
 }
 
 /* Map Footer */
-#footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  background: #1F2937;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  box-sizing: border-box;
-  font-family: "Heebo", sans-serif;
-  font-size: 12px;
-  z-index: 1000;
+
+#footer{
+  position:absolute;
+
+  bottom:0;
+  left:0;
+
+  width:100%;
+  height:40px;
+
+  background:#1F2937;
+  color:white;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:0 20px;
+
+  box-sizing:border-box;
+
+  font-family:"Heebo", sans-serif;
+  font-size:12px;
+
+  z-index:1000;
 }
 
 /* HEATMAP SELECTOR */
-#heatmap-panel {
-  position: absolute;
+
+#heatmap-panel{
+  position:absolute;
   top: 88px;
-  left: 245px;
+  left:265px;
   width: 160px;
-  z-index: 1000;
-  background: white;
-  padding: 12px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+
+  z-index:1000;
+
+  background:white;
+  padding:12px;
+
+  border-radius:10px;
+
+  box-shadow:0 2px 8px rgba(0,0,0,.2);
 }
 
-#heatmap-panel label {
-  display: block;
-  font-size: 13px;
+#heatmap-panel label{
+  display:block;
+  font-size:12px;
+  font-weight:600;
+  margin-bottom:6px;
+
+  font-family:"Heebo", sans-serif;
   font-weight: 730;
-  margin-bottom: 6px;
-  font-family: "Heebo", sans-serif;
+  font-size:13px;
   color: #124734;
 }
 
-#heatmap-panel select {
-  width: 100%;
-  padding: 6px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-family: "Heebo", sans-serif;
-  box-sizing: border-box;
-}
+#heatmap-panel select{
+  width:160px;
+  padding:6px;
 
-/* LAYER CONTROL PANEL */
-#layer-control {
-  position: absolute;
-  top: 88px;
-  left: 10px;
-  z-index: 1000;
-  width: 220px;
-  max-height: calc(35vh - 100px);
-  overflow-y: auto;
-  background: white;
-  border-radius: 10px;
-  padding: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  font-family: "Heebo", sans-serif;
-  font-size: 12px;
-}
+  border-radius:6px;
+  border:1px solid #ccc;
 
-#layer-control h4 {
-  margin: 0 0 10px;
-  color: #124734;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.layer-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px 0;
-  position: relative;
-  font-size: 12px;
-  color: #333;
-  font-weight: 400;
-}
-
-.layer-item input {
-  display: none;
-}
-
-.slider {
-  width: 35px;
-  height: 15px;
-  background: #ccc;
-  border-radius: 20px;
-  position: relative;
-  cursor: pointer;
-  transition: 0.3s;
-  flex-shrink: 0;
-}
-
-.slider::before {
-  content: "";
-  position: absolute;
-  width: 13px;
-  height: 13px;
-  left: 0;
-  top: 53%;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  background: #FFFFFF;
-  transition: 0.3s;
-}
-
-.layer-item input:checked + .slider {
-  background: #124734;
-}
-
-.layer-item input:checked + .slider::before {
-  transform: translate(20px, -50%);
+  font-family:"Heebo", sans-serif;
 }
 
 /* DYNAMIC MULTI-LAYER LEGEND (VERTICAL STACK) */
+
 #legend {
   position: absolute;
-  top: 290px; /* Positioned directly under layer control */
+  top: 320px;
   left: 10px;
   z-index: 1000;
+
   width: 220px;
-  max-height: calc(100vh - 350px); /* Dynamically shrinks/scrolls to avoid hitting footer */
+  max-height: 80vh;
   overflow-y: auto;
+
   background: white;
   padding: 12px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+
   font-family: "Heebo", sans-serif;
   font-size: 12px;
 }
 
+/* Section Headings inside Legend */
 #legend h4 {
   margin: 10px 0 6px 0;
   font-size: 13px;
@@ -276,6 +229,7 @@ html, body {
   margin-top: 0;
 }
 
+/* Vertical Row Items */
 .legend-item {
   display: flex !important;
   align-items: center !important;
@@ -284,6 +238,7 @@ html, body {
   background: transparent !important;
 }
 
+/* Color Boxes for Polygons */
 .legend-swatch {
   width: 16px !important;
   height: 16px !important;
@@ -294,6 +249,7 @@ html, body {
   border: 1px solid rgba(0, 0, 0, 0.15) !important;
 }
 
+/* Dots for Point Layers */
 .legend-circle {
   width: 10px !important;
   height: 10px !important;
@@ -305,6 +261,7 @@ html, body {
   border: 1px solid #fff !important;
 }
 
+/* Text Labels - Completely strips outline boxes */
 .legend-label {
   font-family: "Heebo", sans-serif !important;
   font-size: 12px !important;
@@ -318,6 +275,7 @@ html, body {
   margin: 0 !important;
 }
 
+/* Legend Main Title - Palm Oil Producer Country */
 .legend-main-title {
   margin: 0 0 2px 0;
   font-size: 14px;
@@ -326,8 +284,11 @@ html, body {
   font-family: "Heebo", sans-serif;
 }
 
+/* Subtitle for the specific dynamic view ("All Certification", "IP", etc.) */
 #legend .legend-subtitle {
-  margin: 0 0 8px 0 !important;
+  margin-top: 0 !important;      /* Removes top margin */
+  margin-bottom: 3px !important;
+  margin: 0 0 8px 0;
   font-size: 12px;
   font-weight: 600;
   color: #666666 !important;
@@ -335,13 +296,15 @@ html, body {
 }
 
 .legend-subtitle-note {
-  margin: 0 0 8px 0 !important;
-  font-size: 10px;
+  margin-top: 0 !important;      /* Removes top margin */
+  margin-bottom: 8px !important;  /* Space between the note and the color swatches */
+  font-size:10px;
   color: #666666;
   font-style: italic;
-  line-height: 1.2;
+  line-height: 1.2;              /* Ensures clean text line spacing */
 }
 
+/* Legend Subheading - RSPO Concession Layer & PO Mill*/
 .legend-subheading {
   font-size: 12px;
   font-weight: 600;
@@ -350,6 +313,7 @@ html, body {
   font-family: "Heebo", sans-serif;
 }
 
+/* Footnote at the bottom of legend */
 #legend-note {
   margin: 8px 0 0 0;
   padding-top: 6px;
@@ -360,28 +324,10 @@ html, body {
   line-height: 1.3;
 }
 
-/* Custom & Welcome Popup Styling */
-.maplibregl-popup {
-  max-width: min(600px, 90vw) !important;
-  z-index: 1500;
-}
-
-.maplibregl-popup-content {
-  font-family: "Heebo", sans-serif;
-  font-size: 13px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 10px;
-  padding: 16px;
-  max-height: calc(100vh - 180px);
-  overflow-y: auto;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-}
-
+/* Custom Popup Styling */
 .popup-title {
   margin: 0 0 8px 0;
-  color: #124734;
+  color: #124734; /* Change to your preferred title color */
   font-family: "Heebo", sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -394,22 +340,95 @@ html, body {
   font-family: "Heebo", sans-serif;
 }
 
-.maplibregl-popup-close-button {
-  font-size: 16px;
+/* Welcome Popup */
+.maplibregl-popup-content{
+  font-family: "Heebo", sans-serif;
+  font-size: 14px;
+
+  background: rgba(255, 255, 255, 0.5);   /* 50% transparent */
+  backdrop-filter: blur(8px);              /* Optional glass effect */
+  -webkit-backdrop-filter: blur(8px);
+
+  border-radius: 10px;
+  padding: 14px;
+}
+
+/* Content List Panel */
+.maplibregl-popup-close-button{
+  font-size: 11px;
   color: #124734;
-  padding: 4px 8px;
 }
 
-/* Custom Scrollbar for Floating Panels */
-#legend::-webkit-scrollbar,
-#layer-control::-webkit-scrollbar,
-.maplibregl-popup-content::-webkit-scrollbar {
-  width: 5px;
+/* Layer Control Panel */
+#layer-control {
+  position: absolute;
+  top: 88px;
+  left: 10px;
+  z-index: 10;
+  width: 220px;
+  background: white;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  font-family: "Heebo", sans-serif;
+  font-size: 12px;           /* Default size for all text inside */
 }
 
-#legend::-webkit-scrollbar-thumb,
-#layer-control::-webkit-scrollbar-thumb,
-.maplibregl-popup-content::-webkit-scrollbar-thumb {
+/* Title */
+#layer-control h4 {
+  margin: 0 0 10px;
+  color: #124734;
+  font-size: 14px;           /* Title size */
+  font-weight: 700;
+}
+
+/* Layer names */
+.layer-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  position: relative;
+  font-size: 12px;           /* Layer name size */
+  color: #333;
+  font-weight: 400;
+}
+
+/* Hide default checkbox */
+.layer-item input {
+  display: none;
+}
+
+/* Switch background */
+.slider {
+  width: 35px;
+  height: 15px;
   background: #ccc;
-  border-radius: 4px;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Switch circle */
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  left: 0;
+  top: 53%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #FFFFFF;
+  transition: 0.3s;
+}
+
+/* ON state */
+.layer-item input:checked + .slider {
+  background: #124734;
+}
+
+.layer-item input:checked + .slider::before {
+  transform: translate(20px, -50%);
 }
