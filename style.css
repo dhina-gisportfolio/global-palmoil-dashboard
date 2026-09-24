@@ -441,3 +441,107 @@ html, body {
     flex-wrap: wrap;
   }
 }
+
+/* Other Computer Display Resolution */
+/* 1. Low-Height / Compact Laptops (e.g., 1366x768, 1440x900) */
+@media screen and (min-width: 1025px) and (max-height: 800px) {
+  #header {
+    height: 65px;
+    padding: 8px 18px;
+  }
+
+  #header-left-content img {
+    height: 38px;
+  }
+
+  #map {
+    top: 65px;
+  }
+
+  .left-panel-container {
+    top: 73px;
+    width: min(220px, 20vw);
+    max-height: calc(100vh - 120px);
+    gap: 8px;
+  }
+
+  #layer-control {
+    padding: 8px 10px;
+  }
+
+  #layer-control h4 {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .layer-item {
+    margin: 4px 0;
+    font-size: 11px;
+  }
+
+  .slider {
+    width: 28px;
+    height: 13px;
+  }
+
+  .slider::before {
+    width: 10px;
+    height: 10px;
+  }
+
+  .layer-item input:checked + .slider::before {
+    transform: translate(15px, -50%);
+  }
+
+  #legend {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+
+  #heatmap-panel {
+    top: 73px;
+    left: calc(min(220px, 20vw) + 18px);
+    width: 140px;
+    padding: 8px;
+  }
+
+  #heatmap-panel label {
+    font-size: 10px;
+  }
+
+  #heatmap-panel select {
+    font-size: 10px;
+    padding: 3px;
+  }
+}
+
+/* 2. Medium Resolution Desktops (e.g., 1025px to 1440px Width) */
+@media screen and (min-width: 1025px) and (max-width: 1440px) and (min-height: 801px) {
+  .left-panel-container {
+    width: 220px;
+  }
+
+  #heatmap-panel {
+    left: 240px;
+  }
+}
+
+/* 3. Ultra-Wide & 4K Monitors (Screens wider than 1920px) */
+@media screen and (min-width: 1921px) {
+  .left-panel-container {
+    width: 280px;
+  }
+
+  #heatmap-panel {
+    left: 300px;
+    width: 190px;
+  }
+
+  #layer-control h4, .legend-main-title {
+    font-size: 15px;
+  }
+
+  .layer-item, .legend-label {
+    font-size: 13px !important;
+  }
+}
