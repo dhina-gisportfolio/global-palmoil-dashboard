@@ -23,8 +23,8 @@ html, body {
 
 /* Map Controls Override */
 .maplibregl-ctrl-top-right {
-  top: 10px !important;
-  right: 10px !important;
+  top: 5px !important;
+  right: 5px !important;
 }
 
 .maplibregl-ctrl-attrib {
@@ -38,7 +38,7 @@ html, body {
 
 .maplibregl-ctrl-scale {
   position: absolute !important;
-  bottom: 60px !important;
+  bottom: 70px !important;
   right: 10px !important;
   margin: 0 !important;
 }
@@ -130,7 +130,7 @@ html, body {
   pointer-events: none; /* Allows click-through outside of panels */
 }
 
-/* LAYER CONTROL PANEL */
+/* LAYER  PANEL */
 #layer-control {
   background: white;
   border-radius: 10px;
